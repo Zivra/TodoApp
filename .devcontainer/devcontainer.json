@@ -17,8 +17,39 @@
     }
   },
   "postCreateCommand": "chmod +x .devcontainer/init.sh && .devcontainer/init.sh",
+  "postStartCommand": "nohup dotnet run --project TodoApp.AppHost > aspire.log 2>&1 &",
   "forwardPorts": [
     5000,
-    5001
-  ]
+    5001,
+    5147,
+    7123,
+    15169,
+    17249
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "Todo API (HTTP)",
+      "onAutoForward": "openBrowser"
+    },
+    "5001": {
+      "label": "Todo API (HTTPS)",
+      "onAutoForward": "openBrowser"
+    },
+    "5147": {
+      "label": "Todo Web App (HTTP)",
+      "onAutoForward": "openBrowser"
+    },
+    "7123": {
+      "label": "Todo Web App (HTTPS)",
+      "onAutoForward": "openBrowser"
+    },
+    "15169": {
+      "label": "Aspire Dashboard (HTTP)",
+      "onAutoForward": "openBrowser"
+    },
+    "17249": {
+      "label": "Aspire Dashboard (HTTPS)",
+      "onAutoForward": "openBrowser"
+    }
+  }
 }
