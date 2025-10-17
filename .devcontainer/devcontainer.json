@@ -1,8 +1,21 @@
 {
-  "image": "mcr.microsoft.com/dotnet/sdk:8.0",
-  "extensions": [
-    "ms-dotnettools.csharp"
-  ],
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.blazorwasm-companion",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.test-adapter-converter",
+        "humao.rest-client",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  },
   "postCreateCommand": "chmod +x .devcontainer/init.sh && .devcontainer/init.sh",
   "forwardPorts": [
     5000,
